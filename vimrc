@@ -33,7 +33,7 @@ filetype indent on
 filetype plugin on
 
 au BufNewFile,BufRead *.psgi,*.t set filetype=perl
-au BufNewFile,BufRead *.json set filetype=json
+au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.m set filetype=objc
 au BufNewFile,BufRead *.conf set filetype=ini
 au BufNewFile,BufRead *.scala set filetype=scala
@@ -45,31 +45,48 @@ au BufNewFile,BufRead nginx.conf set filetype=nginx
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'git://github.com/jsx/jsx.vim.git'
+Bundle 'git://github.com/josephwecker/haxe.vim.git'
+Bundle 'tpope/vim-rails'
+
 autocmd FileType make setlocal noexpandtab
+
 autocmd FileType html setlocal tabstop=2
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType html setlocal softtabstop=2
+
 autocmd FileType javascript setlocal tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2
 autocmd FileType javascript setlocal softtabstop=2
+
 autocmd FileType css setlocal tabstop=2
 autocmd FileType css setlocal shiftwidth=2
 autocmd FileType css setlocal softtabstop=2
+
 autocmd FileType jsp setlocal tabstop=2
 autocmd FileType jsp setlocal shiftwidth=2
 autocmd FileType jsp setlocal softtabstop=2
+
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType yaml setlocal softtabstop=2
+
 autocmd FileType ruby setlocal tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2
 autocmd FileType ruby setlocal softtabstop=2
+
+autocmd FileType cpp setlocal tabstop=2
+autocmd FileType cpp setlocal shiftwidth=2
+autocmd FileType cpp setlocal softtabstop=2
+
 autocmd FileType objc setlocal tabstop=2
 autocmd FileType objc setlocal shiftwidth=2
 autocmd FileType objc setlocal softtabstop=2
+
 autocmd FileType json setlocal tabstop=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType json setlocal softtabstop=2
+
 autocmd FileType scala setlocal tabstop=2
 autocmd FileType scala setlocal shiftwidth=2
 autocmd FileType scala setlocal softtabstop=2

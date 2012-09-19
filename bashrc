@@ -18,6 +18,7 @@ export PATH=$PATH:/opt/ndk
 export PATH=$PATH:/opt/hadoop/bin
 export PATH=$PATH:/opt/nacl
 export PATH=$PATH:/opt/appengine/bin
+export PATH=$PATH:/opt/cassandra/bin
 
 alias clang++="clang++ -std=c++0x -Wall"
 alias emacs="emacs -nw"
@@ -26,7 +27,7 @@ if [ -d /opt/google/chrome ]; then
     alias chrome="/opt/google/chrome/google-chrome"
 fi
 
-if [ $SHLVL = 1 ]; then
+if [ $SHLVL = 1 ];then
     screen
 fi
 
