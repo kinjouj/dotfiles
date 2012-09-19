@@ -26,7 +26,7 @@ if [ -d /opt/google/chrome ]; then
     alias chrome="/opt/google/chrome/google-chrome"
 fi
 
-if [ $SHLVL = 1 ];then
+if [ $SHLVL = 1 ]; then
     screen
 fi
 
