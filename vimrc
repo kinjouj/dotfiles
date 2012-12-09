@@ -26,7 +26,7 @@ set noswapfile
 set nostartofline
 set shortmess+=I
 set t_Co=256
-set background=light
+set background=dark
 
 syntax on
 filetype indent on
@@ -40,14 +40,23 @@ au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.ejs set filetype=javascript
 au BufNewFile,BufRead *.tx set filetype=html
 au BufNewFile,BufRead *.nmf set filetype=json
+au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead nginx.conf set filetype=nginx
+au BufNewFile,BufRead *.less set filetype=less
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'git://github.com/jsx/jsx.vim.git'
-Bundle 'git://github.com/josephwecker/haxe.vim.git'
+Bundle 'jsx/jsx.vim.git'
 Bundle 'tpope/vim-rails'
+Bundle 'themerius/GithubColorscheme'
+Bundle 'scala.vim'
+Bundle 'ZenCoding.vim'
+Bundle 'leafgarland/typescript-vim.git'
+Bundle 'TwitVim'
+Bundle 'groenewege/vim-less'
+Bundle 'grooovy.vim'
+Bundle 'nginx.vim'
 
 autocmd FileType make setlocal noexpandtab
 
