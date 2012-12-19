@@ -1,6 +1,4 @@
 function vimp {
-    set path := `perldoc -l $1`
-
     vim `perldoc -l $1`
 }
 
