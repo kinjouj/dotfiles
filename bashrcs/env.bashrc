@@ -4,8 +4,6 @@ source $HOME/.perlbrew/etc/bashrc
 source $HOME/.phpbrew/bashrc
 source $HOME/.gvm/bin/gvm-init.sh
 
-NODE_VERSION=`nodebrew ls | head -1`
-
 export PATH=$PATH:$HOME/.rbenv/bin
 export PATH=$PATH:$HOME/.rbenv/shims
 export PATH=$PATH:$HOME/.phpbrew/php/$PHPBREW_PHP/sbin
@@ -19,6 +17,8 @@ export PATH=$PATH:/opt/appengine/bin
 export PATH=$PATH:/opt/cassandra/bin
 export PATH=$PATH:/opt/jsx/bin
 export PATH=$PATH:/usr/lib/fluent/ruby/bin
+
+NODE_VERSION=`nodebrew ls | head -1`
 
 export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.30/
 export PERL5LIB=$HOME/.dev/perl/lib/site_perl

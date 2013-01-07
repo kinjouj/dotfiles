@@ -25,6 +25,9 @@ set hidden
 set noswapfile
 set nostartofline
 set shortmess+=I
+set foldenable
+set foldcolumn=1
+set foldmethod=marker
 set t_Co=256
 set background=dark
 
@@ -41,22 +44,24 @@ au BufNewFile,BufRead *.ejs set filetype=javascript
 au BufNewFile,BufRead *.tx set filetype=html
 au BufNewFile,BufRead *.nmf set filetype=json
 au BufNewFile,BufRead *.ts set filetype=typescript
-au BufNewFile,BufRead nginx.conf set filetype=nginx
 au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.bashrc set filetype=sh
+au BufNewFile,BufRead *.gradle set filetype=groovy
+
+au BufNewFile,BufRead nginx.conf set filetype=nginx
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'jsx/jsx.vim.git'
 Bundle 'tpope/vim-rails'
-Bundle 'themerius/GithubColorscheme'
-Bundle 'scala.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'leafgarland/typescript-vim.git'
-Bundle 'TwitVim'
 Bundle 'groenewege/vim-less'
-Bundle 'grooovy.vim'
+Bundle 'groovy.vim'
 Bundle 'nginx.vim'
+Bundle 'molokai.vim'
+Bundle 'quickrun.vim'
 
 autocmd FileType make setlocal noexpandtab
 
