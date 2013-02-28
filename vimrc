@@ -105,4 +105,8 @@ autocmd FileType scala setlocal tabstop=2
 autocmd FileType scala setlocal shiftwidth=2
 autocmd FileType scala setlocal softtabstop=2
 
+autocmd FileType less setlocal tabstop=2
+autocmd FileType less setlocal shiftwidth=2
+autocmd FileType less setlocal softtabstop=2
+
 nnoremap p "0p

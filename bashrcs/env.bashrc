@@ -16,13 +16,17 @@ export PATH=$PATH:/opt/nacl
 export PATH=$PATH:/opt/appengine/bin
 export PATH=$PATH:/opt/cassandra/bin
 export PATH=$PATH:/opt/jsx/bin
+export PATH=$PATH:/opt/flex/bin
 export PATH=$PATH:/usr/lib/fluent/ruby/bin
 
 NODE_VERSION=`nodebrew ls | head -1`
 
-export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.30/
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export PERL5LIB=$HOME/.dev/perl/lib/site_perl
-export NODE_PATH=$HOME/.nodebrew/node/$NODE_VERSION/lib/node_modules
+
+if [ $NODE_VERSION != "not installed" ]; then
+    export NODE_PATH=$HOME/.nodebrew/node/$NODE_VERSION/lib/node_modules
+fi
 
 export HOSTSIZE=5000
 export HISTFILESIZE=5000
