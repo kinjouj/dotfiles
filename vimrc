@@ -28,7 +28,6 @@ set shortmess+=I
 set foldenable
 set foldcolumn=1
 set foldmethod=marker
-set t_Co=256
 set background=dark
 
 syntax on
@@ -39,7 +38,6 @@ au BufNewFile,BufRead *.psgi,*.t set filetype=perl
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.m set filetype=objc
 au BufNewFile,BufRead *.conf set filetype=ini
-au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.ejs set filetype=javascript
 au BufNewFile,BufRead *.tx set filetype=html
 au BufNewFile,BufRead *.nmf set filetype=json
@@ -47,21 +45,26 @@ au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.bashrc set filetype=sh
 au BufNewFile,BufRead *.gradle set filetype=groovy
-
+au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead nginx.conf set filetype=nginx
+au BufNewFile,BufRead *.scala set filetype=scala
+au BufNewFile,BufRead *.diag set filetype=blockdiag
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'jsx/jsx.vim.git'
-Bundle 'tpope/vim-rails'
 Bundle 'ZenCoding.vim'
 Bundle 'leafgarland/typescript-vim.git'
 Bundle 'groenewege/vim-less'
 Bundle 'groovy.vim'
 Bundle 'nginx.vim'
-Bundle 'molokai.vim'
 Bundle 'quickrun.vim'
+Bundle 'vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
 
 autocmd FileType make setlocal noexpandtab
 
@@ -108,5 +111,9 @@ autocmd FileType scala setlocal softtabstop=2
 autocmd FileType less setlocal tabstop=2
 autocmd FileType less setlocal shiftwidth=2
 autocmd FileType less setlocal softtabstop=2
+
+autocmd FileType coffee setlocal tabstop=2
+autocmd FileType coffee setlocal shiftwidth=2
+autocmd FileType coffee setlocal softtabstop=2
 
 nnoremap p "0p

@@ -1,5 +1,4 @@
 source $HOME/.phpbrew/bashrc
-source $HOME/.gvm/bin/gvm-init.sh
 source $HOME/.rbenv/completions/rbenv.zsh
 
 export PATH=$HOME/.plenv/shims:$PATH
@@ -14,14 +13,12 @@ export PATH=$PATH:/opt/ndk
 export PATH=$PATH:/opt/hadoop/bin
 export PATH=$PATH:/opt/nacl
 export PATH=$PATH:/opt/appengine/bin
-export PATH=$PATH:/opt/cassandra/bin
-export PATH=$PATH:/opt/jsx/bin
-export PATH=$PATH:/opt/flex/bin
-export PATH=$PATH:/usr/lib/fluent/ruby/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-export PERL5LIB=$HOME/.dev/perl/lib/site_perl
+export PERL5LIB=$HOME/.dev/perl/lib/perl5/site_perl/5.16.2
 export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
+export PHPBREW_PHP_HOME=$PHPBREW_ROOT/php/$PHPBREW_PHP
+export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
 export HOSTSIZE=5000
 export HISTFILESIZE=5000
@@ -32,12 +29,16 @@ alias clang++="clang++ -std=c++0x -Wall"
 alias ls="ls --color"
 alias ll="ls -l"
 alias sudo="sudo "
-alias php-fpm="php-fpm --pid=$HOME/.phpbrew/php/$PHPBREW_PHP/var/run/fpm.pid"
+alias php-fpm="php-fpm --pid=$PHPBREW_ROOT/php/$PHPBREW_PHP/var/run/fpm.pid"
+alias irb="pry"
+alias tw="termtter"
+alias gr="grunt"
+alias rm="trash-put"
 
 if [ -d /opt/google/chrome ]; then
     alias chrome=/opt/google/chrome/google-chrome
 fi
 
-if [ $SHLVL = 1 ];then
-    screen -q
+if [ $SHLVL = 1 ]; then
+    screen
 fi

@@ -19,7 +19,7 @@ setopt list_packed
 setopt complete_aliases
 setopt append_history
 setopt hist_ignore_dups
-setopt share_history
+#setopt share_history
 setopt equals
 setopt interactive_comments
 setopt magic_equal_subst
@@ -30,3 +30,7 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 zstyle ':completion:*' use-cache true
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/kinjouj/.gvm/bin/gvm-init.sh" ]] && source "/home/kinjouj/.gvm/bin/gvm-init.sh"
