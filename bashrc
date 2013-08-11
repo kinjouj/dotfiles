@@ -31,8 +31,6 @@ alias ll="ls -l"
 alias sudo="sudo "
 alias php-fpm="php-fpm --pid=$PHPBREW_ROOT/php/$PHPBREW_PHP/var/run/fpm.pid"
 alias irb="pry"
-alias tw="termtter"
-alias gr="grunt"
 alias rm="trash-put"
 
 if [ -d /opt/google/chrome ]; then
@@ -40,5 +38,9 @@ if [ -d /opt/google/chrome ]; then
 fi
 
 if [ $SHLVL = 1 ]; then
-    screen
+    screen -a
+fi
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
