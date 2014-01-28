@@ -44,10 +44,6 @@ if [ $SHLVL = 1 ]; then
 fi
 
 
-if [ -x /usr/bin/dircolors ]; then
-    #test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 function escape_kakko {
     cat - | sed -e 's/</\&lt;/g' | sed -e 's/>/\&gt;/g'
 }
