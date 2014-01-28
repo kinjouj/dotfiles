@@ -15,6 +15,7 @@ export PATH=$PATH:/opt/nacl
 export PATH=$PATH:/opt/appengine/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export ANDROID_HOME=/opt/android
 export PERL5LIB=$HOME/.dev/perl/lib/perl5/site_perl/5.16.2
 export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
 export PHPBREW_PHP_HOME=$PHPBREW_ROOT/php/$PHPBREW_PHP
@@ -32,15 +33,21 @@ alias sudo="sudo "
 alias php-fpm="php-fpm --pid=$PHPBREW_ROOT/php/$PHPBREW_PHP/var/run/fpm.pid"
 alias irb="pry"
 alias rm="trash-put"
+alias simplehttpserver="python -mSimpleHTTPServer"
 
 if [ -d /opt/google/chrome ]; then
-    alias chrome=/opt/google/chrome/google-chrome
+    alias chrome="/opt/google/chrome/google-chrome --renderer-process-limit=5"
 fi
 
 if [ $SHLVL = 1 ]; then
     screen -a
 fi
 
+
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    #test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+function escape_kakko {
+    cat - | sed -e 's/</\&lt;/g' | sed -e 's/>/\&gt;/g'
+}

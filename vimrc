@@ -1,5 +1,3 @@
-colorscheme molokai
-
 set nocompatible
 set title
 set encoding=utf-8
@@ -34,6 +32,8 @@ syntax on
 filetype indent on
 filetype plugin on
 
+autocmd FileType python setl noautoindent
+
 au BufNewFile,BufRead *.psgi,*.t set filetype=perl
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.m set filetype=objc
@@ -54,12 +54,12 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'ZenCoding.vim'
-Bundle 'leafgarland/typescript-vim.git'
 Bundle 'groenewege/vim-less'
 Bundle 'groovy.vim'
 Bundle 'nginx.vim'
 Bundle 'quickrun.vim'
 Bundle 'vim-coffee-script'
+Bundle 'leafgarland/typescript-vim'
 Bundle 'altercation/vim-colors-solarized'
 
 let g:solarized_visibility = "high"
@@ -115,5 +115,10 @@ autocmd FileType less setlocal softtabstop=2
 autocmd FileType coffee setlocal tabstop=2
 autocmd FileType coffee setlocal shiftwidth=2
 autocmd FileType coffee setlocal softtabstop=2
+
+autocmd FileType typescript setlocal tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2
+autocmd FileType typescript setlocal softtabstop=2
+
 
 nnoremap p "0p
