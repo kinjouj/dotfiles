@@ -9,7 +9,6 @@ termcapinfo xterm ti@:te@
 shelltitle "$ |bash:"
 vbell off
 autodetach on
-startup_message off
 
 logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
 
