@@ -1,0 +1,17 @@
+startup_message off
+defbce on
+defutf8 on
+deflog on
+term xterm-256color
+altscreen on
+hardstatus on
+termcapinfo xterm ti@:te@
+shelltitle "$ |bash:"
+vbell off
+autodetach on
+
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+
+hardstatus alwayslastline
+hardstatus string '%{= kw} [%= %{= kw}%?%-Lw?%{= kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ]%{w}[%{r} %m/%d/%y/ %C %A %{w}]%{w}'
+hardcopydir /tmp
