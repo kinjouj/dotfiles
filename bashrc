@@ -6,16 +6,6 @@ if [ -d $HOME/.linuxbrew ] ; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
 fi
 
-if [ -d /opt/android ] ; then
-    export ANDROID_HOME=/opt/android
-    export PATH=$PATH:/opt/android/tools
-    export PATH=$PATH:/opt/android/platform-tools
-
-    if [ -d /opt/ndk ] ; then
-        export PATH=$PATH:/opt/ndk
-    fi
-fi
-
 if [ -d /opt/nacl ] ; then
     export PATH=$PATH:/opt/nacl
 fi

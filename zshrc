@@ -1,4 +1,4 @@
-source ~/.bashrc_my
+source ~/.bashrc
 
 autoload -Uz compinit
 autoload -Uz bashcompinit

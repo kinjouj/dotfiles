@@ -57,15 +57,15 @@ Bundle 'ZenCoding.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'groovy.vim'
 Bundle 'nginx.vim'
-Bundle 'scala.vim'
 Bundle 'quickrun.vim'
 Bundle 'vim-coffee-script'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'tyru/caw.vim'
 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme solarized
 
 autocmd FileType make setlocal noexpandtab
 
@@ -108,6 +108,7 @@ autocmd FileType json setlocal softtabstop=2
 autocmd FileType scala setlocal tabstop=2
 autocmd FileType scala setlocal shiftwidth=2
 autocmd FileType scala setlocal softtabstop=2
+"autocmd FileType scala setlocal noautoindent
 
 autocmd FileType less setlocal tabstop=2
 autocmd FileType less setlocal shiftwidth=2
@@ -120,6 +121,5 @@ autocmd FileType coffee setlocal softtabstop=2
 autocmd FileType typescript setlocal tabstop=2
 autocmd FileType typescript setlocal shiftwidth=2
 autocmd FileType typescript setlocal softtabstop=2
-
 
 nnoremap p "0p
