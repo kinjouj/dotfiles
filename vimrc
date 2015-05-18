@@ -72,6 +72,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType html setlocal tabstop=2
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType html setlocal softtabstop=2
+autocmd FileType html setlocal noautoindent
 
 autocmd FileType javascript setlocal tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2

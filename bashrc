@@ -6,10 +6,15 @@ if [ -d $HOME/.linuxbrew ] ; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
 fi
 
+if [ -d /opt/android ] ; then
+    export PATH=$PATH:/opt/android/tools:/opt/android/platform-tools
+fi
+
 if [ -d /opt/nacl ] ; then
     export PATH=$PATH:/opt/nacl
 fi
 
+export HOMEBREW_LOGS=$HOME/.HOMEBREW_LIBRARY/Logs
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export GRADLE_HOME=$HOME/.linuxbrew/Cellar/gradle/2.1
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
@@ -24,6 +29,7 @@ alias ll="ls -l"
 alias irb="pry"
 alias rm="trash-put"
 alias simplehttpserver="python -mSimpleHTTPServer"
+alias shs="simplehttpserver"
 alias mv="mv -i -b"
 
 if [ -x /usr/bin/dircolors ]; then
@@ -32,7 +38,7 @@ fi
 
 
 if [ -d /opt/google/chrome ]; then
-    alias chrome="/opt/google/chrome/google-chrome --renderer-process-limit=5"
+    alias chrome="/opt/google/chrome/google-chrome"
 fi
 
 if [ $SHLVL = 1 ]; then
