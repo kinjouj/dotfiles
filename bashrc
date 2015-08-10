@@ -10,12 +10,18 @@ if [ -d /opt/android ] ; then
     export PATH=$PATH:/opt/android/tools:/opt/android/platform-tools
 fi
 
+if [ -d /opt/appengine ] ; then
+    export PATH=$PATH:/opt/appengine/bin
+fi
+
 if [ -d /opt/nacl ] ; then
     export PATH=$PATH:/opt/nacl
 fi
 
+export ANDROID_EMULATOR_FORCE_32BIT=true
+export NODE_PATH=/home/kinjouj/.linuxbrew/lib/node_modules
 export HOMEBREW_LOGS=$HOME/.HOMEBREW_LIBRARY/Logs
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 export GRADLE_HOME=$HOME/.linuxbrew/Cellar/gradle/2.1
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 export HOSTSIZE=5000
@@ -47,4 +53,8 @@ fi
 
 function escape_kakko {
     cat - | sed -e 's/</\&lt;/g' | sed -e 's/>/\&gt;/g' | sed -e 's/\\/\&#92;/g'
+}
+
+function count() {
+    ls $1 | wc -l
 }

@@ -49,6 +49,7 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead nginx.conf set filetype=nginx
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.diag set filetype=blockdiag
+au BufNewFile,BufRead *.markdown set filetype=txt
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -63,6 +64,7 @@ Bundle 'leafgarland/typescript-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'tyru/caw.vim'
+Bundle 'othree/yajs.vim'
 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
