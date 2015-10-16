@@ -6,6 +6,10 @@ if [ -d $HOME/.linuxbrew ] ; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
 fi
 
+if [ -d $HOME/.gvm ] ; then
+    source /home/kinjouj/.gvm/scripts/gvm
+fi
+
 if [ -d /opt/android ] ; then
     export PATH=$PATH:/opt/android/tools:/opt/android/platform-tools
 fi
@@ -18,7 +22,6 @@ if [ -d /opt/nacl ] ; then
     export PATH=$PATH:/opt/nacl
 fi
 
-export ANDROID_EMULATOR_FORCE_32BIT=true
 export NODE_PATH=/home/kinjouj/.linuxbrew/lib/node_modules
 export HOMEBREW_LOGS=$HOME/.HOMEBREW_LIBRARY/Logs
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
@@ -34,9 +37,10 @@ alias ls="ls --color"
 alias ll="ls -l"
 alias irb="pry"
 alias rm="trash-put"
-alias simplehttpserver="python -mSimpleHTTPServer"
-alias shs="simplehttpserver"
+alias shs="python -mSimpleHTTPServer"
 alias mv="mv -i -b"
+
+export PATH=$PATH:$JAVA_HOME/bin
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

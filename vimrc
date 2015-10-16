@@ -27,6 +27,8 @@ set foldenable
 set foldcolumn=1
 set foldmethod=marker
 set background=dark
+set colorcolumn=100
+set noic
 
 syntax on
 filetype indent on
@@ -50,6 +52,8 @@ au BufNewFile,BufRead nginx.conf set filetype=nginx
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.diag set filetype=blockdiag
 au BufNewFile,BufRead *.markdown set filetype=txt
+au BufNewFile,BufRead .eslintrc set filetype=json
+au BufNewFile,BufRead *.pro set filetype=proguard
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -65,6 +69,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'tyru/caw.vim'
 Bundle 'othree/yajs.vim'
+Bundle 'elzr/vim-json'
 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
