@@ -29,6 +29,8 @@ set foldmethod=marker
 set background=dark
 set colorcolumn=100
 set noic
+set noautoindent
+set nosmartindent
 
 syntax on
 filetype indent on
@@ -54,8 +56,9 @@ au BufNewFile,BufRead *.diag set filetype=blockdiag
 au BufNewFile,BufRead *.markdown set filetype=txt
 au BufNewFile,BufRead .eslintrc set filetype=json
 au BufNewFile,BufRead *.pro set filetype=proguard
+au BufNewFile,BufRead .simplecov set filetype=ruby
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'ZenCoding.vim'
@@ -70,10 +73,12 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'tyru/caw.vim'
 Bundle 'othree/yajs.vim'
 Bundle 'elzr/vim-json'
+Bundle 'negima1976/h2o-vim-syntax'
 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
+au BufRead,BufNewFile h2o.conf set ft=h2o
 autocmd FileType make setlocal noexpandtab
 
 autocmd FileType html setlocal tabstop=2

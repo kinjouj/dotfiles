@@ -2,63 +2,35 @@ if [ -d $HOME/.rbenv ] ; then
     export PATH=$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims
 fi
 
-if [ -d $HOME/.linuxbrew ] ; then
-    export PATH=$HOME/.linuxbrew/bin:$PATH
+if [ -d $HOME/.nodebrew ] ; then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+    export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
 fi
 
-if [ -d $HOME/.gvm ] ; then
-    source /home/kinjouj/.gvm/scripts/gvm
+if [ -d $HOME/.swiftly ] ; then
+    . "$HOME/.swiftly/env.sh"
 fi
 
-if [ -d /opt/android ] ; then
-    export PATH=$PATH:/opt/android/tools:/opt/android/platform-tools
-fi
+export PS1="\[\e]0;\u:\w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ "
 
-if [ -d /opt/appengine ] ; then
-    export PATH=$PATH:/opt/appengine/bin
-fi
-
-if [ -d /opt/nacl ] ; then
-    export PATH=$PATH:/opt/nacl
-fi
-
-export NODE_PATH=/home/kinjouj/.linuxbrew/lib/node_modules
 export HOMEBREW_LOGS=$HOME/.HOMEBREW_LIBRARY/Logs
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export GRADLE_HOME=$HOME/.linuxbrew/Cellar/gradle/2.1
-export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 export HOSTSIZE=5000
 export HISTFILESIZE=5000
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib
+export LS_COLORS='fi=00;93:di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 alias emacs="emacs -nw"
 alias clang++="clang++ -std=c++0x -Wall"
-alias ls="ls --color"
+#alias ls="ls --color"
 alias ll="ls -l"
 alias irb="pry"
 alias rm="trash-put"
-alias shs="python -mSimpleHTTPServer"
+alias shs="ruby -run -e httpd . -p 8080"
 alias mv="mv -i -b"
+alias top="top -E k"
+alias memcln="sudo sysctl vm.drop_caches=1"
 
-export PATH=$PATH:$JAVA_HOME/bin
-
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-
-if [ -d /opt/google/chrome ]; then
-    alias chrome="/opt/google/chrome/google-chrome"
-fi
 
 if [ $SHLVL = 1 ]; then
     screen -a
 fi
-
-function escape_kakko {
-    cat - | sed -e 's/</\&lt;/g' | sed -e 's/>/\&gt;/g' | sed -e 's/\\/\&#92;/g'
-}
-
-function count() {
-    ls $1 | wc -l
-}
