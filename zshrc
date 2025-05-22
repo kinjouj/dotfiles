@@ -1,9 +1,9 @@
-source ~/.bashrc
-
 autoload -Uz compinit
 autoload -Uz bashcompinit
 compinit
 bashcompinit
+
+source ~/.bashrc_my
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -32,5 +32,17 @@ bindkey "^[[4~" end-of-line
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/kinjouj/.gvm/bin/gvm-init.sh" ]] && source "/home/kinjouj/.gvm/bin/gvm-init.sh"
+prompt_precmd() {
+  if [ -d .git ] ; then
+    local branch="$(git branch --show-current)"
+    RPROMPT=" %F{yellow}%B[${branch}]%b%f"
+  else
+    RPROMPT=""
+  fi
+}
+
+# precmd フックを登録する
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd prompt_precmd
+
+PROMPT="%F{yellow}%B%n%b%f:%F{red}%B%d%b%f:$ "

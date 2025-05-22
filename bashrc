@@ -1,5 +1,6 @@
 if [ -d $HOME/.rbenv ] ; then
-    export PATH=$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims
+    eval "$(~/.rbenv/bin/rbenv init - --no-rehash bash)"
+    #export PATH=$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims
 fi
 
 if [ -d $HOME/.nodebrew ] ; then
@@ -18,10 +19,12 @@ export HOSTSIZE=5000
 export HISTFILESIZE=5000
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib
 export LS_COLORS='fi=00;93:di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 
 alias emacs="emacs -nw"
 alias clang++="clang++ -std=c++0x -Wall"
-#alias ls="ls --color"
+alias ls="ls --color"
 alias ll="ls -l"
 alias irb="pry"
 alias rm="trash-put"
@@ -29,8 +32,9 @@ alias shs="ruby -run -e httpd . -p 8080"
 alias mv="mv -i -b"
 alias top="top -E k"
 alias memcln="sudo sysctl vm.drop_caches=1"
+alias rsync="rsync -rv"
+alias history="history 0"
 
-
-if [ $SHLVL = 1 ]; then
-    screen -a
-fi
+#if [ $SHLVL = 1 ]; then
+#    screen -a
+#fi
