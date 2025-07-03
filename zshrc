@@ -3,13 +3,14 @@ autoload -Uz bashcompinit
 compinit
 bashcompinit
 
+source /etc/zsh_command_not_found
 source ~/.bashrc_my
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
-PROMPT='[%n@%m %~] '
 
+setopt auto_list
 setopt auto_cd
 setopt auto_pushd
 setopt auto_param_slash
@@ -41,8 +42,11 @@ prompt_precmd() {
   fi
 }
 
-# precmd フックを登録する
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd prompt_precmd
 
-PROMPT="%F{yellow}%B%n%b%f:%F{red}%B%d%b%f:$ "
+PROMPT="%F{yellow}%B%n@%m%b%f:%F{red}%B%d%b%f:$ "
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -57,6 +57,7 @@ au BufNewFile,BufRead *.markdown set filetype=txt
 au BufNewFile,BufRead .eslintrc set filetype=json
 au BufNewFile,BufRead *.pro set filetype=proguard
 au BufNewFile,BufRead .simplecov set filetype=ruby
+au BufNewFile,BufRead Guardfile set filetype=ruby
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
@@ -74,6 +75,7 @@ Bundle 'tyru/caw.vim'
 Bundle 'othree/yajs.vim'
 Bundle 'elzr/vim-json'
 Bundle 'negima1976/h2o-vim-syntax'
+Bundle 'b4b4r07/vim-hcl'
 
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"

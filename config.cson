@@ -1,0 +1,32 @@
+"*":
+  core:
+    closeEmptyWindows: false
+    disabledPackages: [
+      "about"
+      "background-tips"
+      "git-diff"
+      "github"
+      "language-git"
+      "language-gfm"
+      "open-on-github"
+      "spell-check"
+      "welcome"
+    ]
+    openEmptyEditorOnStart: false
+    themes: [
+      "atom-dark-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    preferredLineLength: 90
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "9c5d32aa-3a1e-4282-aae2-2453edfb56ba"
+  "rubocop-auto-correct":
+    autoRun: true
+  "tree-view":
+    squashDirectoryNames: true
+  welcome:
+    showChangeLog: false
+    showOnStartup: false

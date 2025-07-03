@@ -8,8 +8,19 @@ if [ -d $HOME/.nodebrew ] ; then
     export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
 fi
 
+if [ -d $HOME/.sdkman ] ; then
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 if [ -d $HOME/.swiftly ] ; then
     . "$HOME/.swiftly/env.sh"
+fi
+
+if [ -d $HOME/Android ] ; then
+    export ANDROID_HOME=$HOME/Android/Sdk
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 fi
 
 export PS1="\[\e]0;\u:\w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ "
@@ -24,7 +35,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 alias emacs="emacs -nw"
 alias clang++="clang++ -std=c++0x -Wall"
-alias ls="ls --color"
+alias ls="ls --color --group-directories-first"
 alias ll="ls -l"
 alias irb="pry"
 alias rm="trash-put"
@@ -34,7 +45,13 @@ alias top="top -E k"
 alias memcln="sudo sysctl vm.drop_caches=1"
 alias rsync="rsync -rv"
 alias history="history 0"
+alias docker-container-stop="docker stop \$(docker ps -qa)"
+alias docker-container-prune="docker container prune"
+alias docker-images-prune="docker rmi \$(docker images -qa)"
+alias docker-system-prune="docker system prune"
 
 #if [ $SHLVL = 1 ]; then
 #    screen -a
 #fi
+
+xmodmap -e 'keycode 49 = 0x0000'

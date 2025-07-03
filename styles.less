@@ -1,0 +1,64 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Pulsar starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Pulsar.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+  color: blue;
+}
+.tree-view .project-root.project-root .entries > .file {
+  font-size: 13px;
+  color: #bdbdbd;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+  color: white;
+}
+.icon-file-directory {
+  color: #bdbdee;
+  font-weight: bold;
+  font-size: 13px;
+}
+.icon-file-directory:before {
+  color: #bdbdee;
+}
+.status-modified {
+  color: #aaa;
+}
+.status-modified > .list-item {
+  color: #aaa !important;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+atom-text-editor .gutter {
+  .line-number {
+    color: white;
+  }
+  .line-number:hover {
+    color: white;
+  }
+}
+
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
+  // border-color: red;
+}
