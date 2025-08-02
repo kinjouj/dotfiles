@@ -3,8 +3,8 @@ autoload -Uz bashcompinit
 compinit
 bashcompinit
 
-source /etc/zsh_command_not_found
 source ~/.bashrc_my
+source /etc/zsh_command_not_found
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -32,6 +32,8 @@ bindkey "^[[4~" end-of-line
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:*files' ignored-patterns '*.gitkeep' '*?~' '*\#'
+zstyle ':completion:*:*' ignore-parents parent pwd
 
 prompt_precmd() {
   if [ -d .git ] ; then

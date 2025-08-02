@@ -8,6 +8,11 @@ if [ -d $HOME/.nodebrew ] ; then
     export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
 fi
 
+if [ -d $HOME/.venv ] ; then
+    export VIRTUAL_ENV=$HOME/.venv
+    export PATH=$VIRTUAL_ENV/bin:$PATH
+fi
+
 if [ -d $HOME/.sdkman ] ; then
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
@@ -45,6 +50,7 @@ alias top="top -E k"
 alias memcln="sudo sysctl vm.drop_caches=1"
 alias rsync="rsync -rv"
 alias history="history 0"
+alias open="LANG=C open"
 alias docker-container-stop="docker stop \$(docker ps -qa)"
 alias docker-container-prune="docker container prune"
 alias docker-images-prune="docker rmi \$(docker images -qa)"

@@ -3,3 +3,5 @@
 	email = kinjouj@gmail.com
 [log]
 	date = local
+[mergetool]
+	keepBackup = true

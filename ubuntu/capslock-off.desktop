@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=capslock-off
+Comment=capslock-off
+Exec=xmodmap -e 'keycode 66 = 0x0000'
+OnlyShowIn=XECE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
+X-XFCE-Autostart-Override=true
+
