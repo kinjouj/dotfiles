@@ -1,3 +1,5 @@
+WORDCHARS=${WORDCHARS//\/}
+
 autoload -Uz compinit
 autoload -Uz bashcompinit
 compinit
@@ -29,26 +31,15 @@ setopt glob_dots
 
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+bindkey '^H' backward-kill-word
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*files' ignored-patterns '*.gitkeep' '*?~' '*\#'
 zstyle ':completion:*:*' ignore-parents parent pwd
 
-prompt_precmd() {
-  if [ -d .git ] ; then
-    local branch="$(git branch --show-current)"
-    RPROMPT=" %F{yellow}%B[${branch}]%b%f"
-  else
-    RPROMPT=""
-  fi
-}
-
 autoload -Uz add-zsh-hook
-add-zsh-hook precmd prompt_precmd
 
 PROMPT="%F{yellow}%B%n@%m%b%f:%F{red}%B%d%b%f:$ "
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+source <(npm completion)

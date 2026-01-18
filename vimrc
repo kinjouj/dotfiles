@@ -1,8 +1,6 @@
 set nocompatible
 set title
 set encoding=utf-8
-set paste
-set cindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -27,7 +25,7 @@ set foldenable
 set foldcolumn=1
 set foldmethod=marker
 set background=dark
-set colorcolumn=100
+set colorcolumn=120
 set noic
 set noautoindent
 set nosmartindent
@@ -39,7 +37,6 @@ filetype plugin on
 autocmd FileType python setl noautoindent
 
 au BufNewFile,BufRead *.psgi,*.t set filetype=perl
-au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.m set filetype=objc
 au BufNewFile,BufRead *.conf set filetype=ini
 au BufNewFile,BufRead *.ejs set filetype=javascript
@@ -72,7 +69,6 @@ Bundle 'leafgarland/typescript-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'tyru/caw.vim'
-Bundle 'othree/yajs.vim'
 Bundle 'elzr/vim-json'
 Bundle 'negima1976/h2o-vim-syntax'
 Bundle 'b4b4r07/vim-hcl'

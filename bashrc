@@ -1,10 +1,9 @@
 if [ -d $HOME/.rbenv ] ; then
     eval "$(~/.rbenv/bin/rbenv init - --no-rehash bash)"
-    #export PATH=$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims
 fi
 
 if [ -d $HOME/.nodebrew ] ; then
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
+    export PATH=$PATH:$HOME/.nodebrew/current/bin
     export NODE_PATH=$HOME/.nodebrew/current/lib/node_modules
 fi
 
@@ -14,6 +13,7 @@ if [ -d $HOME/.venv ] ; then
 fi
 
 if [ -d $HOME/.sdkman ] ; then
+    export SDKMAN_DIR="$HOME/.sdkman"
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
@@ -28,8 +28,11 @@ if [ -d $HOME/Android ] ; then
     export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 fi
 
+export RUBY_YJIT_ENABLE=1
+export EDITOR=vim
+export DIRENV_LOG_FORMAT=
+export PATH=$PATH:node_modules/.bin
 export PS1="\[\e]0;\u:\w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ "
-
 export HOMEBREW_LOGS=$HOME/.HOMEBREW_LIBRARY/Logs
 export HOSTSIZE=5000
 export HISTFILESIZE=5000
@@ -37,9 +40,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib
 export LS_COLORS='fi=00;93:di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-
 alias emacs="emacs -nw"
-alias clang++="clang++ -std=c++0x -Wall"
 alias ls="ls --color --group-directories-first"
 alias ll="ls -l"
 alias irb="pry"
@@ -50,7 +51,6 @@ alias top="top -E k"
 alias memcln="sudo sysctl vm.drop_caches=1"
 alias rsync="rsync -rv"
 alias history="history 0"
-alias open="LANG=C open"
 alias docker-container-stop="docker stop \$(docker ps -qa)"
 alias docker-container-prune="docker container prune"
 alias docker-images-prune="docker rmi \$(docker images -qa)"

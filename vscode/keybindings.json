@@ -1,0 +1,21 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    {
+        "key": "ctrl+shift+t",
+        "command": "extension.goToSpec",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-extension.goToSpec",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+9",
+        "command": "workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    }
+]
