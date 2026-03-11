@@ -133,4 +133,6 @@ autocmd FileType typescript setlocal tabstop=2
 autocmd FileType typescript setlocal shiftwidth=2
 autocmd FileType typescript setlocal softtabstop=2
 
+autocmd FileType scss setlocal sw=2 ts=2 sts=2 et
+
 nnoremap p "0p
